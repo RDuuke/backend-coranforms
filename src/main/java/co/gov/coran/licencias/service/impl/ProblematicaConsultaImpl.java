@@ -38,37 +38,38 @@ public class ProblematicaConsultaImpl implements ProblamaConsultaService {
 
             ProblemaConsultaDTO problemaConsultaDTO = new ProblemaConsultaDTO();
 
-            problemaConsultaDTO.setEeta_sec((BigDecimal) problemAux[0]);
-            problemaConsultaDTO.setTipo((String) problemAux[1]);
-            problemaConsultaDTO.setTipo_txt((String) problemAux[2]);
-            problemaConsultaDTO.setIntensidad((BigDecimal) problemAux[3]);
-            problemaConsultaDTO.setIntensidad_txt((String) problemAux[4]);
-            problemaConsultaDTO.setExtension((BigDecimal) problemAux[5]);
-            problemaConsultaDTO.setExtension_txt((String) problemAux[6]);
-            problemaConsultaDTO.setPersistencia((BigDecimal) problemAux[7]);
-            problemaConsultaDTO.setPersistencia_txt((String) problemAux[8]);
-            problemaConsultaDTO.setReversibilidad((BigDecimal) problemAux[9]);
-            problemaConsultaDTO.setReversibilidad_txt((String) problemAux[10]);
-            problemaConsultaDTO.setRecuperabilidad((BigDecimal) problemAux[11]);
-            problemaConsultaDTO.setRecuperabilidad_txt((String) problemAux[12]);
-            problemaConsultaDTO.setProbabilidad_ocurrencia((BigDecimal) problemAux[13]);
-            problemaConsultaDTO.setProbabilidad_ocurrencia_txt((String) problemAux[14]);
-            problemaConsultaDTO.setImportancia_afectacion((BigDecimal) problemAux[15]);
-            problemaConsultaDTO.setMagnitud_potencial((BigDecimal) problemAux[16]);
-            problemaConsultaDTO.setMagnitud_potencial_txt((String) problemAux[17]);
-            problemaConsultaDTO.setValor_riesgo((BigDecimal) problemAux[18]);
-
-            try{ Clob lob = (Clob) problemAux[19];
-            problemaConsultaDTO.setJustificacion_importancia(clobToString(lob));}catch (Exception e){}
+            problemaConsultaDTO.setLinea((BigDecimal) problemAux[0]);
+            problemaConsultaDTO.setEeta_sec((BigDecimal) problemAux[1]);
+            problemaConsultaDTO.setTipo((String) problemAux[2]);
+            problemaConsultaDTO.setTipo_txt((String) problemAux[3]);
+            problemaConsultaDTO.setIntensidad((BigDecimal) problemAux[4]);
+            problemaConsultaDTO.setIntensidad_txt((String) problemAux[5]);
+            problemaConsultaDTO.setExtension((BigDecimal) problemAux[6]);
+            problemaConsultaDTO.setExtension_txt((String) problemAux[7]);
+            problemaConsultaDTO.setPersistencia((BigDecimal) problemAux[8]);
+            problemaConsultaDTO.setPersistencia_txt((String) problemAux[9]);
+            problemaConsultaDTO.setReversibilidad((BigDecimal) problemAux[10]);
+            problemaConsultaDTO.setReversibilidad_txt((String) problemAux[11]);
+            problemaConsultaDTO.setRecuperabilidad((BigDecimal) problemAux[12]);
+            problemaConsultaDTO.setRecuperabilidad_txt((String) problemAux[13]);
+            problemaConsultaDTO.setProbabilidad_ocurrencia((BigDecimal) problemAux[14]);
+            problemaConsultaDTO.setProbabilidad_ocurrencia_txt((String) problemAux[15]);
+            problemaConsultaDTO.setImportancia_afectacion((BigDecimal) problemAux[16]);
+            problemaConsultaDTO.setMagnitud_potencial((BigDecimal) problemAux[17]);
+            problemaConsultaDTO.setMagnitud_potencial_txt((String) problemAux[18]);
+            problemaConsultaDTO.setValor_riesgo((BigDecimal) problemAux[19]);
 
             try{ Clob lob = (Clob) problemAux[20];
-                problemaConsultaDTO.setJustificacion_riesgo(clobToString(lob));}catch (Exception e){}
+            problemaConsultaDTO.setJustificacion_importancia(clobToString(lob));}catch (Exception e){}
 
             try{ Clob lob = (Clob) problemAux[21];
+                problemaConsultaDTO.setJustificacion_riesgo(clobToString(lob));}catch (Exception e){}
+
+            try{ Clob lob = (Clob) problemAux[22];
                 problemaConsultaDTO.setJustificacion_gnral(clobToString(lob));}catch (Exception e){}
 
-            problemaConsultaDTO.setFecha_creacion((Date) problemAux[22]);
-            problemaConsultaDTO.setCreado_por((String) problemAux[23]);
+            problemaConsultaDTO.setFecha_creacion((Date) problemAux[23]);
+            problemaConsultaDTO.setCreado_por((String) problemAux[24]);
 
             problematicas.add(problemaConsultaDTO);
         }
