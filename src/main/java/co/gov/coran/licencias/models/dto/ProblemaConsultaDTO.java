@@ -4,6 +4,8 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 public class ProblemaConsultaDTO {
+
+        private BigDecimal linea;
         private BigDecimal eeta_sec;
         private String tipo;
         private String tipo_txt;
@@ -29,7 +31,13 @@ public class ProblemaConsultaDTO {
         private Date Fecha_creacion;
         private String creado_por;
 
+    public void setLinea(BigDecimal linea){
+        this.linea = linea;
+    }
 
+    public BigDecimal getLinea(){
+        return this.linea;
+    }
     public BigDecimal getEeta_sec() {
         return eeta_sec;
     }
