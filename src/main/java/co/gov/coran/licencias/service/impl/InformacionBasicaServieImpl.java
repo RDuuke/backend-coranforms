@@ -4,7 +4,6 @@ import co.gov.coran.licencias.models.dto.InformacionBasicaDTO;
 import co.gov.coran.licencias.models.dto.ListaDatosBasicos;
 import co.gov.coran.licencias.repository.InformacionBasicaRepository;
 import co.gov.coran.licencias.service.InformacionBasicaService;
-import oracle.sql.BLOB;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;

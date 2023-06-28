@@ -1,11 +1,8 @@
 package co.gov.coran.licencias.models.dto;
 
-import oracle.sql.BLOB;
-import oracle.sql.CLOB;
 
 import java.math.BigDecimal;
-import java.sql.Blob;
-import java.sql.Clob;
+
 
 public class GuardarAnalisiDTO {
     private BigDecimal niSecEEta;

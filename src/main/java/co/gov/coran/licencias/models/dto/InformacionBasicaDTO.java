@@ -1,6 +1,5 @@
 package co.gov.coran.licencias.models.dto;
 
-import oracle.sql.BLOB;
 
 import java.math.BigDecimal;
 import java.util.Date;
