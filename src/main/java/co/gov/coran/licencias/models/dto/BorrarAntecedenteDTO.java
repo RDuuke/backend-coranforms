@@ -2,7 +2,7 @@ package co.gov.coran.licencias.models.dto;
 
 import java.math.BigDecimal;
 
-public class BorrarAntecenteDTO {
+public class BorrarAntecedenteDTO {
 
     private BigDecimal niSec;
 
