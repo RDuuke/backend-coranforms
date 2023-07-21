@@ -57,7 +57,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/v2/api-docs", "/configuration/ui", "/swagger-resources/**",
                 "/configuration/security", "/swagger-ui.html", "/webjars/**",
-                "/register/client/hello", "/error", "/csrf", "/", "/resource/login","/guardar_firma","/guardar_ObligacionIt","/asignacionesF", "/guardar_conclusion","/editar_coordenada","/guardar_problematica","/guardar_recomendacion","/consulta_obligacionesIt","/situacion_consulta","/guardar_situacion","/folder/","/problematica_consulta","/guardar_analisis","/analisis_consulta","/borrar_antecedente","/guardar_antecedente","/consulta_coordenadas","/guardar_general_ant","/colaboradores_consulta","/recomendacion_consulta","/conclusion_consulta","/consulta_todas_situacionE","/consulta_general","/consulta_todas_aspect", "/borrar_obligacion", "/borrar_situacion_obligacion", "/borrar_antecedente", "/borrar_texto_recomenda");
+                "/register/client/hello", "/error", "/csrf", "/", "/resource/login",
+                "/guardar_firma","/guardar_ObligacionIt","/asignacionesF", "/guardar_conclusion",
+                "/editar_coordenada","/guardar_problematica","/guardar_recomendacion","/consulta_obligacionesIt",
+                "/situacion_consulta","/guardar_situacion","/folder/","/problematica_consulta","/guardar_analisis",
+                "/analisis_consulta","/borrar_antecedente","/guardar_antecedente","/consulta_coordenadas","/guardar_general_ant",
+                "/colaboradores_consulta","/recomendacion_consulta","/conclusion_consulta","/consulta_todas_situacionE",
+                "/consulta_general","/consulta_todas_aspect", "/borrar_obligacion", "/borrar_situacion_obligacion",
+                "/borrar_antecedente", "/borrar_texto_recomenda", "/borrar_texto_conclusion"
+        );
 
     }
     @Autowired
