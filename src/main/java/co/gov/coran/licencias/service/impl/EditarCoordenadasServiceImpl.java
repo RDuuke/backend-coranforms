@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EditarCoordenadasServiceImpl implements EditarCoordenadasService {
-
     @Autowired
     private GuardarCoordenadasRepository guardarCoordenadasRepository;
     @Override
