@@ -5,13 +5,13 @@ import java.math.BigDecimal;
 
 public class BorrarCoordenadasDTO {
 
-    public BigDecimal niSecEEta;
+    private BigDecimal niSecEEta;
 
-    public String viUsuario;
+    private String viUsuario;
 
-    public BigDecimal niLineaCoordenada;
+    private BigDecimal niLineaCoordenada;
 
-    public String voError;
+    private String voError;
 
     public BigDecimal getNiSecEEta() {
         return niSecEEta;

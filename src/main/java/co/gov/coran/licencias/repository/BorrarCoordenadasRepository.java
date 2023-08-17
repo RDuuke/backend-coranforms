@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 public class BorrarCoordenadasRepository {
     private final EntityManager entityManager;
 
-    private static final String storeProcedureName ="sirena.pks_it_sgmto.borrar_coordenadas(";
+    private static final String storeProcedureName ="sirena.pks_it_sgmto.borrar_coordenadas";
 
     BorrarCoordenadasRepository(EntityManager entityManager){this.entityManager = entityManager;}
 
@@ -34,7 +34,7 @@ public class BorrarCoordenadasRepository {
 
         System.out.println(voError);
 
-        borrarCoordenadasDTO.setVoError(String.valueOf(storedProcedureQuery.getOutputParameterValue("voError")));
+
         entityManager.close();
 
         return String.valueOf(voError);

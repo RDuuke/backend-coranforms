@@ -1,23 +1,19 @@
 package co.gov.coran.licencias.controller;
 
 import co.gov.coran.licencias.models.dto.BorrarCoordenadasDTO;
-import co.gov.coran.licencias.service.BorrarCoordenadasService;
+import co.gov.coran.licencias.repository.BorrarCoordenadasRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BorrarCoordenadasController {
-
-    private final BorrarCoordenadasService borrarCoordenadasService;
-
     @Autowired
-    public BorrarCoordenadasController(BorrarCoordenadasService borrarCoordenadasService) {
-        this.borrarCoordenadasService = borrarCoordenadasService;
-    }
+    private BorrarCoordenadasRepository borrarCoordenadasService;
 
-    @DeleteMapping("/eliminar_coordenada")
+    @PostMapping("/borrar_coordenadas")
     @ResponseStatus(HttpStatus.OK)
+    @ResponseBody
     public String borrarCoordenada(@RequestBody BorrarCoordenadasDTO borrarCoordenadasDTO) {
         return borrarCoordenadasService.borrarCoordenada(borrarCoordenadasDTO);
     }

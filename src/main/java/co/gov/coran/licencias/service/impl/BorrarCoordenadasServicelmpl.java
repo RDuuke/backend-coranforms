@@ -11,6 +11,7 @@ public class BorrarCoordenadasServicelmpl implements BorrarCoordenadasService {
     private BorrarCoordenadasRepository borrarCoordenadasRepository;
 
     public String borrarCoordenada(BorrarCoordenadasDTO borrarCoordenadasDTO){
+
         return this.borrarCoordenadasRepository.borrarCoordenada(borrarCoordenadasDTO);
     }
 
