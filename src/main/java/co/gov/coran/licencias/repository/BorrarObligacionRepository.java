@@ -19,7 +19,7 @@ public class BorrarObligacionRepository {
         this.entityManager = entityManager;
     }
 
-    public String borrarObligacion (BorrarObligacionDTO borrarObligacionDTO){
+    public String borrarObligacion(BorrarObligacionDTO borrarObligacionDTO){
 
         StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(storeProcedureName);
         storedProcedureQuery.registerStoredProcedureParameter("niSecEEta", BigDecimal.class, ParameterMode.IN);
@@ -27,8 +27,8 @@ public class BorrarObligacionRepository {
         storedProcedureQuery.registerStoredProcedureParameter("viIdUsuario", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("voError", String.class, ParameterMode.OUT);
 
-        storedProcedureQuery.setParameter("niSecEEta", borrarObligacionDTO.getNiSec());
-        storedProcedureQuery.setParameter("niLinea", borrarObligacionDTO.getNioLinea());
+        storedProcedureQuery.setParameter("niSecEEta", borrarObligacionDTO.getNiSecEEta());
+        storedProcedureQuery.setParameter("niLinea", borrarObligacionDTO.getNiLinea());
         storedProcedureQuery.setParameter("viIdUsuario", borrarObligacionDTO.getViIdUsuario());
 
         storedProcedureQuery.execute();
