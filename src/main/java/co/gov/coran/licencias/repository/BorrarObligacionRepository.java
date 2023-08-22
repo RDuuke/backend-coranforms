@@ -19,7 +19,7 @@ public class BorrarObligacionRepository {
         this.entityManager = entityManager;
     }
 
-    public String borrarObligacion (BorrarObligacionDTO borrarObligacionDTO){
+    public String borrarObligacion(BorrarObligacionDTO borrarObligacionDTO){
 
         StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(storeProcedureName);
         storedProcedureQuery.registerStoredProcedureParameter("niSecEEta", BigDecimal.class, ParameterMode.IN);
