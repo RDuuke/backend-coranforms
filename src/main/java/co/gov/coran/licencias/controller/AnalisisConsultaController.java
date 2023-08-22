@@ -18,7 +18,7 @@ public class AnalisisConsultaController {
     AnalisisConsultaController(AnalisisConsultaService analisisConsultaService){
         this.analisisConsultaService= analisisConsultaService;
     }
-    @GetMapping("/analisis_consulta")
+        @GetMapping("/analisis_consulta")
     @ResponseStatus(HttpStatus.OK)
     public  @ResponseBody
     ListaAnalisis listaAnalisis(@RequestParam(name="niSecEETA") BigDecimal niSecEETA){

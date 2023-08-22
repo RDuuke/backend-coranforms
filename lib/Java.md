@@ -10,11 +10,5 @@ https://bitbucket.org/conseresapl/backend-coranforms/src/main/
 https://www.jetbrains.com/idea/download/?section=windows
 
 ## Agregar el Jar
-Agregar el archivo ojdbc6-11.2.0.3.jar
-Opcion:
-  Files->Project Estructure->Module->Agregar->Seleccionar archivo JAR
-
-## Elimine tambien las librerias no asignadas
-Opcion:
-  Files->Project Estructure->Module
-Eleimines las que estan de color rojo
+Agregar el archivo ojdbc6-11.2.0.3.jar al Maven
+mvn install:install-file -Dfile=lib/ojdbc6-11.2.0.3.jar -DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0 -Dpackaging=jar
