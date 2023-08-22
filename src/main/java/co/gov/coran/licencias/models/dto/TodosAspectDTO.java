@@ -6,8 +6,7 @@ import java.sql.Clob;
 import java.util.Date;
 
 public class TodosAspectDTO {
-
-private BigDecimal linea;
+    private BigDecimal linea;
 private String texto;
 private String imagenes;
 private String titulo;

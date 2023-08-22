@@ -20,7 +20,7 @@ public class AntecedentesAgregadosController {
         this.antecedentesAgregadosService = antecedentesAgregadosService;
     }
 
-    @GetMapping("/antecedentes_agregados")
+        @GetMapping("/antecedentes_agregados")
     @ResponseStatus(HttpStatus.OK)
     public  @ResponseBody
     ListaAgregadosAntecedente listaAgregadosAntecedente(

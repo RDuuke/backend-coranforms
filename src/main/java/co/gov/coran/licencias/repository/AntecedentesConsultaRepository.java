@@ -110,7 +110,6 @@ public class AntecedentesConsultaRepository {
 
         System.out.println(voError);
 
-
         entityManager.close();
 
         return String.valueOf(voError);

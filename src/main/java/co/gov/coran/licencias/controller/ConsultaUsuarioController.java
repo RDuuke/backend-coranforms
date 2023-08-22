@@ -18,7 +18,7 @@ public class ConsultaUsuarioController {
     @GetMapping("/consulta_usuario")
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody
-    ListaUsuariosE listaUsuariosE(@RequestParam(name="niSecExp") BigDecimal niSecExp){
+        ListaUsuariosE listaUsuariosE(@RequestParam(name="niSecExp") BigDecimal niSecExp){
         return consultaUsuarioService.listaUsuariosE(niSecExp);
     }
 }
