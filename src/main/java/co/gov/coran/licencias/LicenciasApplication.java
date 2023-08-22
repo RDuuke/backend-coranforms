@@ -9,9 +9,9 @@ public class LicenciasApplication extends SpringBootServletInitializer {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LicenciasApplication.class, args);
-	}
+	 }
 
-	}
+}
 
 
 

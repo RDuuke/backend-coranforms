@@ -13,7 +13,7 @@ public class BorrarAntecenteRepository {
 
     private final EntityManager entityManager;
 
-    private static final String storeProcedureName = "sirena.pks_it_gnral.borrar_antecedente";
+    private static final String storeProcedureName = "sirena.pks_it_sgmto.borrar_antecedente";
 
     BorrarAntecenteRepository(EntityManager entityManager){
         this.entityManager = entityManager;

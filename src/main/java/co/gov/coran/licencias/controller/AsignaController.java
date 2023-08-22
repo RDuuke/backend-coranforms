@@ -20,7 +20,7 @@ public class AsignaController {
     public ConexionAdService conexionAdService;
     public AsignaController(AsignaService asignaService) {this.asignaService = asignaService;}
 
-    @GetMapping("/asignacionesF")
+        @GetMapping("/asignacionesF")
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody
     ListaAsigna listaAsignaciones(@RequestParam(name= "viIdUsuario")String viIdUsuario){
