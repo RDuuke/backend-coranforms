@@ -2,13 +2,14 @@ package co.gov.coran.licencias.models.dto;
 
 import java.math.BigDecimal;
 
-public class BorrarObligacionDTO {
+
+public class BorrarCoordenadasDTO {
 
     private BigDecimal niSecEEta;
 
-    private BigDecimal niLinea;
+    private String viUsuario;
 
-    private String  viIdUsuario;
+    private BigDecimal niLineaCoordenada;
 
     private String voError;
 
@@ -20,20 +21,20 @@ public class BorrarObligacionDTO {
         this.niSecEEta = niSecEEta;
     }
 
-    public BigDecimal getNiLinea() {
-        return niLinea;
+    public String getViUsuario() {
+        return viUsuario;
     }
 
-    public void setNiLinea(BigDecimal niLinea) {
-        this.niLinea = niLinea;
+    public void setViUsuario(String viUsuario) {
+        this.viUsuario = viUsuario;
     }
 
-    public String getViIdUsuario() {
-        return viIdUsuario;
+    public BigDecimal getNiLineaCoordenada() {
+        return niLineaCoordenada;
     }
 
-    public void setViIdUsuario(String viIdUsuario) {
-        this.viIdUsuario = viIdUsuario;
+    public void setNiLineaCoordenada(BigDecimal niLineaCoordenada) {
+        this.niLineaCoordenada = niLineaCoordenada;
     }
 
     public String getVoError() {
