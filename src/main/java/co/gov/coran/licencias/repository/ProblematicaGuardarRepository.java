@@ -7,6 +7,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.ParameterMode;
 import javax.persistence.StoredProcedureQuery;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Repository
@@ -32,6 +34,8 @@ public class ProblematicaGuardarRepository {
         storedProcedureQuery.registerStoredProcedureParameter("ciJustificacionImportancia", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("ciJustificacionriesgo", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("ciJustificacionGnral", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("ciJustificacionAgentes", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("tiAgentesPeligro", ArrayList.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("voError", String.class, ParameterMode.OUT);
 
         storedProcedureQuery.setParameter("niSecEEta", problematicaGuardarDTO.getNiSecEEta());
@@ -41,11 +45,13 @@ public class ProblematicaGuardarRepository {
         storedProcedureQuery.setParameter("niExtension", problematicaGuardarDTO.getNiExtension());
         storedProcedureQuery.setParameter("niPersistencia", problematicaGuardarDTO.getNiPersistencia());
         storedProcedureQuery.setParameter("niReversibilidad", problematicaGuardarDTO.getNiReversibilidad());
-         storedProcedureQuery.setParameter("niRecuperabilidad", problematicaGuardarDTO.getNiRecuperabilidad());
+        storedProcedureQuery.setParameter("niRecuperabilidad", problematicaGuardarDTO.getNiRecuperabilidad());
         storedProcedureQuery.setParameter("niProbabilidadOcurrencia", problematicaGuardarDTO.getNiProbabilidadOcurrencia());
         storedProcedureQuery.setParameter("ciJustificacionImportancia", problematicaGuardarDTO.getJustificacion_importancia());
         storedProcedureQuery.setParameter("ciJustificacionriesgo", problematicaGuardarDTO.getJustificacion_riesgo());
         storedProcedureQuery.setParameter("ciJustificacionGnral", problematicaGuardarDTO.getJustificacion_gnral());
+        storedProcedureQuery.setParameter("ciJustificacionAgentes", problematicaGuardarDTO.getJustificacion_agente());
+        storedProcedureQuery.setParameter("tiAgentesPeligro", problematicaGuardarDTO.getTipos_agente_peligro());
 
         storedProcedureQuery.execute();
 
