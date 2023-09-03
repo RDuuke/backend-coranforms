@@ -2,6 +2,10 @@ package co.gov.coran.licencias.controller;
 
 import co.gov.coran.licencias.models.dto.GuardarNuevoAgentePeligroDTO;
 import co.gov.coran.licencias.service.GuardarNuevoAgentePeligroService;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -12,10 +16,10 @@ public class GuardarNuevoAgentePeligroController {
     @Autowired
     private GuardarNuevoAgentePeligroService guardarNuevoAgentePeligroService;
 
-    @PostMapping(value="/guardar_nuevo_agente_peligro");
-    @ResponseStatus(HttpStatus.OK);
+    @PostMapping(value="/guardar_nuevo_agente_peligro")
+    @ResponseStatus(HttpStatus.OK)
 
-    GuardarNuevoAgentePeligroDTO guardarNuevoAgentePeligro(
+    public @ResponseBody  GuardarNuevoAgentePeligroDTO guardarNuevoAgentePeligro(
             @RequestParam(value = "viNombre") String viNombre,
             @RequestParam(value = "viCategoria") String viCategoria,
             @RequestParam(value = "viUsuario") String viUsuario
