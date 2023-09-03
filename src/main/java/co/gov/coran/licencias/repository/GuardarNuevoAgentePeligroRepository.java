@@ -1,8 +1,11 @@
 package co.gov.coran.licencias.repository;
 
 import co.gov.coran.licencias.models.dto.GuardarNuevoAgentePeligroDTO;
+import org.springframework.stereotype.Repository;
+
 import javax.persistence.EntityManager;
 import javax.persistence.StoredProcedureQuery;
+import javax.persistence.ParameterMode;
 import java.math.BigDecimal;
 
 @Repository
@@ -24,8 +27,8 @@ public class GuardarNuevoAgentePeligroRepository {
         storedProcedureQuery.registerStoredProcedureParameter("viCodigo", String.class, ParameterMode.OUT);
         storedProcedureQuery.registerStoredProcedureParameter("voError", String.class, ParameterMode.OUT);
 
-        storedProcedureQuery.setParameter("viNombre", nuevoAgentePeligro.getNiSecEEta());
-        storedProcedureQuery.setParameter("viCategoria", nuevoAgentePeligro.getNioLinea());
+        storedProcedureQuery.setParameter("viNombre", nuevoAgentePeligro.getViNombre());
+        storedProcedureQuery.setParameter("viCategoria", nuevoAgentePeligro.getViCategoria());
 
         storedProcedureQuery.execute();
 

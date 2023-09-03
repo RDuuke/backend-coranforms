@@ -10,7 +10,7 @@ public class GuardarNuevoAgentePeligroDTO {
     private String viCodigo;
     private String voError;
 
-    public BigDecimal getViNombre() {
+    public String getViNombre() {
         return viNombre;
     }
 
