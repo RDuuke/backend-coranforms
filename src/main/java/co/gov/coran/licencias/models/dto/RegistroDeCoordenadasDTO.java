@@ -2,52 +2,26 @@ package co.gov.coran.licencias.models.dto;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 public class RegistroDeCoordenadasDTO {
 
-    private String codigo;
-    private String nombre;
-    private String categoria;
-    private String creado_por;
-    private Date fecha_creacion;
+    private String voError;
+    private List<RegistroDeCoordenadasDTO> coResultados;
 
-    public String getCodigo() {
-        return codigo;
+    public String getVoError() {
+        return voError;
     }
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setVoError(String voError) {
+        this.voError = voError;
     }
 
-    public String getNombre() {
-        return nombre;
+    public List<RegistroDeCoordenadasDTO> getCoResultados() {
+        return coResultados;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
-
-    public String getCreado_por() {
-        return creado_por;
-    }
-
-    public void setCreado_por(String creado_por) {
-        this.creado_por = creado_por;
-    }
-
-    public Date getFecha_creacion() {
-        return fecha_creacion;
-    }
-
-    public void setFecha_creacion(Date fecha_creacion) {
-        this.fecha_creacion = fecha_creacion;
+    public void setCoResultados(List<RegistroDeCoordenadasDTO> coResultados) {
+        this.coResultados = coResultados;
     }
 }
