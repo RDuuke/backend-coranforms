@@ -1,6 +1,6 @@
 package co.gov.coran.licencias.service.impl;
 
-import co.gov.coran.licencias.models.dto.EditarCoordenadasDTO;
+import co.gov.coran.licencias.models.dto.GuardarCoordenadasDTO;
 import co.gov.coran.licencias.repository.GuardarCoordenadasRepository;
 import co.gov.coran.licencias.service.EditarCoordenadasService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ public class EditarCoordenadasServiceImpl implements EditarCoordenadasService {
     @Autowired
     private GuardarCoordenadasRepository guardarCoordenadasRepository;
     @Override
-    public EditarCoordenadasDTO guardarCoord(EditarCoordenadasDTO editarCoordenadasDTO) {
-        return guardarCoordenadasRepository.guardarCoord(editarCoordenadasDTO);
+    public GuardarCoordenadasDTO guardarCoord(GuardarCoordenadasDTO guardarCoordenadasDTO) {
+        return guardarCoordenadasRepository.guardarCoord(guardarCoordenadasDTO);
     }
 }

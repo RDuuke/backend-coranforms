@@ -1,6 +1,6 @@
 package co.gov.coran.licencias.controller;
 
-import co.gov.coran.licencias.models.dto.EditarCoordenadasDTO;
+import co.gov.coran.licencias.models.dto.GuardarCoordenadasDTO;
 import co.gov.coran.licencias.service.EditarCoordenadasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,7 +17,7 @@ public class EditarCoordenadasController {
     @PostMapping(value ="/editar_coordenada")
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody
-    EditarCoordenadasDTO guardarCoord(
+    GuardarCoordenadasDTO guardarCoord(
             @RequestParam(value = "niSecEEta") BigDecimal niSecEEta,
             @RequestParam(value = "niLinea") String niLinea,
             @RequestParam(value = "viUsuario") String viUsuario,
@@ -30,20 +30,20 @@ public class EditarCoordenadasController {
             @RequestParam(value = "viDescripcion") String viDescripcion,
             @RequestParam(value = "viObservaciones") String viObservaciones
     ) {
-        EditarCoordenadasDTO editarCoordenadasDTO = new EditarCoordenadasDTO();
-        editarCoordenadasDTO.setNiSecEEta(niSecEEta);
-        editarCoordenadasDTO.setNiLinea(niLinea);
-        editarCoordenadasDTO.setViUsuario(viUsuario);
-        editarCoordenadasDTO.setNiSecCaptacion(niSecCaptacion);
-        editarCoordenadasDTO.setNiSecVertimiento(niSecVertimiento);
-        editarCoordenadasDTO.setNiSistemaCoorde(niSistemaCoorde);
-        editarCoordenadasDTO.setNiX(niX);
-        editarCoordenadasDTO.setNiY(niY);
-        editarCoordenadasDTO.setViTipoCoorde(viTipoCoorde);
-        editarCoordenadasDTO.setViDescripcion(viDescripcion);
-        editarCoordenadasDTO.setViObservaciones(viObservaciones);
+        GuardarCoordenadasDTO guardarCoordenadasDTO = new GuardarCoordenadasDTO();
+        guardarCoordenadasDTO.setNiSecEEta(niSecEEta);
+        guardarCoordenadasDTO.setNiLinea(niLinea);
+        guardarCoordenadasDTO.setViUsuario(viUsuario);
+        guardarCoordenadasDTO.setNiSecCaptacion(niSecCaptacion);
+        guardarCoordenadasDTO.setNiSecVertimiento(niSecVertimiento);
+        guardarCoordenadasDTO.setNiSistemaCoorde(niSistemaCoorde);
+        guardarCoordenadasDTO.setNiX(niX);
+        guardarCoordenadasDTO.setNiY(niY);
+        guardarCoordenadasDTO.setViTipoCoorde(viTipoCoorde);
+        guardarCoordenadasDTO.setViDescripcion(viDescripcion);
+        guardarCoordenadasDTO.setViObservaciones(viObservaciones);
 
-        return this.editarCoordenadasService.guardarCoord(editarCoordenadasDTO);
+        return this.editarCoordenadasService.guardarCoord(guardarCoordenadasDTO);
 
     }
 
