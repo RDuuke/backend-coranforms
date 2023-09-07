@@ -2,21 +2,23 @@ package co.gov.coran.licencias.models.dto;
 
 import java.math.BigDecimal;
 
-public class EditarCoordenadasDTO {
+public class GuardarCoordenadasDTO {
 
     public BigDecimal niSecEEta;
+
     public String viUsuario;
-    public String  niLinea;
-    public String niSecCaptacion;
-    public  String niSecVertimiento;
+
+    public BigDecimal  niLinea;
+    public BigDecimal niSecCaptacion;
+    public  BigDecimal niSecVertimiento;
     public  BigDecimal niSistemaCoorde;
     public BigDecimal niX;
     public BigDecimal niY;
     public String viTipoCoorde;
     public String  viDescripcion;
     public  String viObservaciones;
-    public String  voError;
 
+    public String  voError;
 
     public BigDecimal getNiSecEEta() {
         return niSecEEta;
@@ -34,27 +36,27 @@ public class EditarCoordenadasDTO {
         this.viUsuario = viUsuario;
     }
 
-    public String getNiLinea() {
+    public BigDecimal getNiLinea() {
         return niLinea;
     }
 
-    public void setNiLinea(String niLinea) {
+    public void setNiLinea(BigDecimal niLinea) {
         this.niLinea = niLinea;
     }
 
-    public String getNiSecCaptacion() {
+    public BigDecimal getNiSecCaptacion() {
         return niSecCaptacion;
     }
 
-    public void setNiSecCaptacion(String niSecCaptacion) {
+    public void setNiSecCaptacion(BigDecimal niSecCaptacion) {
         this.niSecCaptacion = niSecCaptacion;
     }
 
-    public String getNiSecVertimiento() {
+    public BigDecimal getNiSecVertimiento() {
         return niSecVertimiento;
     }
 
-    public void setNiSecVertimiento(String niSecVertimiento) {
+    public void setNiSecVertimiento(BigDecimal niSecVertimiento) {
         this.niSecVertimiento = niSecVertimiento;
     }
 
