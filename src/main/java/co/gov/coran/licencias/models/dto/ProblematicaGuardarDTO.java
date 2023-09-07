@@ -6,6 +6,8 @@ import java.util.List;
 public class ProblematicaGuardarDTO {
 
    private BigDecimal niSecEEta;
+
+   private String nioLinea;
    private String viUsuario;
     private String viTipo;
     private BigDecimal niIntensidad;
@@ -141,5 +143,13 @@ public class ProblematicaGuardarDTO {
 
     public void setTipos_agente_peligro(List<String> tipos_agente_peligro) {
         this.tipos_agente_peligro = tipos_agente_peligro;
+    }
+
+    public String getNioLinea() {
+        return nioLinea;
+    }
+
+    public void setNioLinea(String nioLinea) {
+        this.nioLinea = nioLinea;
     }
 }
