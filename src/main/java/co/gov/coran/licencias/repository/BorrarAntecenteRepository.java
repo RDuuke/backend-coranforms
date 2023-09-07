@@ -23,12 +23,12 @@ public class BorrarAntecenteRepository {
 
         StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(storeProcedureName);
         storedProcedureQuery.registerStoredProcedureParameter("niSecEEta", BigDecimal.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("niLinea", BigDecimal.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("niSecDoc", BigDecimal.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("viIdUsuario", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("voError", String.class, ParameterMode.OUT);
 
-        storedProcedureQuery.setParameter("niSecEEta", borrarAntecedenteDTO.getNiSec());
-        storedProcedureQuery.setParameter("niLinea", borrarAntecedenteDTO.getNioLinea());
+        storedProcedureQuery.setParameter("niSecEEta", borrarAntecedenteDTO.getNiSecEEta());
+        storedProcedureQuery.setParameter("niSecDoc", borrarAntecedenteDTO.getNiSecDoc());
         storedProcedureQuery.setParameter("viIdUsuario", borrarAntecedenteDTO.getViIdUsuario());
 
         storedProcedureQuery.execute();
