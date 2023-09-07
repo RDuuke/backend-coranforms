@@ -1,6 +1,6 @@
 package co.gov.coran.licencias.repository;
-
-import co.gov.coran.licencias.models.dto.BorrarAntecedenteDTO;
+;
+import co.gov.coran.licencias.models.dto.BorrarAntecedenteGenralDTO;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -19,16 +19,17 @@ public class BorrarAntecedenteGnralRepository {
         this.entityManager = entityManager;
     }
 
-    public String borrarAntecedenteGnral(BorrarAntecedenteDTO borrarAntecedenteDTO){
+    public String borrarAntecedenteGnral(BorrarAntecedenteGenralDTO borrarAntecedenteGenralDTO){
+
         StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(storeProcedureName);
         storedProcedureQuery.registerStoredProcedureParameter("niSecEEta", BigDecimal.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("nioLinea", BigDecimal.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("nioLinea", BigDecimal.class, ParameterMode.INOUT);
         storedProcedureQuery.registerStoredProcedureParameter("viIdUsuario", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("voError", String.class, ParameterMode.OUT);
 
-        storedProcedureQuery.setParameter("niSecEEta", borrarAntecedenteDTO.getNiSec());
-        storedProcedureQuery.setParameter("nioLinea", borrarAntecedenteDTO.getNioLinea());
-        storedProcedureQuery.setParameter("viIdUsuario", borrarAntecedenteDTO.getViIdUsuario());
+        storedProcedureQuery.setParameter("niSecEEta", borrarAntecedenteGenralDTO.getNiSecEEta());
+        storedProcedureQuery.setParameter("nioLinea", borrarAntecedenteGenralDTO.getNioLinea());
+        storedProcedureQuery.setParameter("viIdUsuario", borrarAntecedenteGenralDTO.getViIdUsuario());
 
         storedProcedureQuery.execute();
 
