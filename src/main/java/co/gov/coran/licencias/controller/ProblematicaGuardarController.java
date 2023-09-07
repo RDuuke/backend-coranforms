@@ -19,6 +19,7 @@ public class ProblematicaGuardarController {
     public @ResponseBody
      ProblematicaGuardarDTO guardarProblematica(
                                 @RequestParam(value = "niSecEEta") BigDecimal niSecEEta,
+                                @RequestParam(value = "nioLinea") String nioLinea,
                                 @RequestParam(name = "viUsuario") String viUsuario,
                                 @RequestParam(value = "viTipo") String viTipo,
                                  @RequestParam(value = "niIntensidad") BigDecimal niIntensidad,
@@ -36,6 +37,7 @@ public class ProblematicaGuardarController {
         ProblematicaGuardarDTO problematicaGuardarDTO = new ProblematicaGuardarDTO();
 
          problematicaGuardarDTO.setNiSecEEta(niSecEEta);
+         problematicaGuardarDTO.setNioLinea(nioLinea);
          problematicaGuardarDTO.setViUsuario(viUsuario);
          problematicaGuardarDTO.setViTipo(viTipo);
          problematicaGuardarDTO.setNiIntensidad(niIntensidad);
