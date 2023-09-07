@@ -8,7 +8,6 @@ import javax.persistence.ParameterMode;
 import javax.persistence.StoredProcedureQuery;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.List;
 
 
 @Repository
@@ -23,6 +22,7 @@ public class ProblematicaGuardarRepository {
         String voerror = null;
         StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(GUARDAR_PROBLEMATICA);
         storedProcedureQuery.registerStoredProcedureParameter("niSecEEta", BigDecimal.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("nioLinea", String.class, ParameterMode.INOUT);
         storedProcedureQuery.registerStoredProcedureParameter("viTipo", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("viUsuario", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("niIntensidad", BigDecimal.class, ParameterMode.IN);
@@ -35,10 +35,11 @@ public class ProblematicaGuardarRepository {
         storedProcedureQuery.registerStoredProcedureParameter("ciJustificacionriesgo", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("ciJustificacionGnral", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("ciJustificacionAgentes", String.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("tiAgentesPeligro", ArrayList.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("viAgentesPeligro", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("voError", String.class, ParameterMode.OUT);
-
+        String typeAgent = String.join(",", problematicaGuardarDTO.getTipos_agente_peligro());
         storedProcedureQuery.setParameter("niSecEEta", problematicaGuardarDTO.getNiSecEEta());
+        storedProcedureQuery.setParameter("nioLinea", problematicaGuardarDTO.getNioLinea());
         storedProcedureQuery.setParameter("viTipo", problematicaGuardarDTO.getViTipo());
         storedProcedureQuery.setParameter("viUsuario", problematicaGuardarDTO.getViUsuario());
         storedProcedureQuery.setParameter("niIntensidad", problematicaGuardarDTO.getNiIntensidad());
@@ -51,7 +52,7 @@ public class ProblematicaGuardarRepository {
         storedProcedureQuery.setParameter("ciJustificacionriesgo", problematicaGuardarDTO.getJustificacion_riesgo());
         storedProcedureQuery.setParameter("ciJustificacionGnral", problematicaGuardarDTO.getJustificacion_gnral());
         storedProcedureQuery.setParameter("ciJustificacionAgentes", problematicaGuardarDTO.getJustificacion_agente());
-        storedProcedureQuery.setParameter("tiAgentesPeligro", problematicaGuardarDTO.getTipos_agente_peligro());
+        storedProcedureQuery.setParameter("viAgentesPeligro", typeAgent);
 
         storedProcedureQuery.execute();
 
