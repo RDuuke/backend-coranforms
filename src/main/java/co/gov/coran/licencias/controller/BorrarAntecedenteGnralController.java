@@ -1,6 +1,8 @@
 package co.gov.coran.licencias.controller;
 
 import co.gov.coran.licencias.models.dto.BorrarAntecedenteDTO;
+import co.gov.coran.licencias.models.dto.BorrarAntecedenteGenralDTO;
+import co.gov.coran.licencias.service.BorrarAntecedenteGnralService;
 import co.gov.coran.licencias.service.BorrarAntecedenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,13 +12,13 @@ import org.springframework.web.bind.annotation.*;
 public class BorrarAntecedenteGnralController {
 
     @Autowired
-    private BorrarAntecedenteService borrarAntecedenteService;
+    private BorrarAntecedenteGnralService borrarAntecedenteGnralService;
 
     @PostMapping("/borrar_antecedente_gnral")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-    public String borrarAntecedenteGnral(@RequestBody BorrarAntecedenteDTO borrarAntecedenteDTO){
-        return this.borrarAntecedenteService.borrarAntecedente(borrarAntecedenteDTO);
+    public String borrarAntecedenteGnral(@RequestBody BorrarAntecedenteGenralDTO borrarAntecedenteGenralDTO){
+        return this.borrarAntecedenteGnralService.borrarAntecedenteGnral(borrarAntecedenteGenralDTO);
     }
 
 }
