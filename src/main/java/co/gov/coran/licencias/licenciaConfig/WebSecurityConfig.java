@@ -65,7 +65,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/colaboradores_consulta","/recomendacion_consulta","/conclusion_consulta","/consulta_todas_situacionE",
                 "/consulta_general","/consulta_todas_aspect", "/borrar_obligacion", "/borrar_situacion_obligacion",
                 "/borrar_antecedente", "/borrar_texto_recomenda", "/borrar_texto_conclusion", "/borrar_analisis_info", 
-                "/borrar_antecedente_gnral,","/borrar_coordenadas"
+                "/borrar_antecedente_gnral,","/borrar_coordenadas","/guardar_coordenadas"
         );
     }
     @Autowired
