@@ -2,9 +2,7 @@ package co.gov.coran.licencias.controller;
 
 
 import co.gov.coran.licencias.models.dto.ListaFirmantes;
-import co.gov.coran.licencias.models.dto.ListaFirmantesDTO;
 import co.gov.coran.licencias.service.ConsultaFirmanteService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

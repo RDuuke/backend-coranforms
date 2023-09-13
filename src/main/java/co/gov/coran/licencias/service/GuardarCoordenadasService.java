@@ -7,4 +7,3 @@ import java.util.List;
 public interface GuardarCoordenadasService {
     List<GuardarCoordenadasDTO> guardarCoordenadas(List<GuardarCoordenadasDTO> guardarCoordenadasDTOList);
 }
-

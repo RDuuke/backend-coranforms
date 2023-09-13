@@ -4,7 +4,6 @@ import co.gov.coran.licencias.models.dto.GuardarCoordenadasDTO;
 import co.gov.coran.licencias.repository.GuardarCoordenadasRepository;
 import co.gov.coran.licencias.service.GuardarCoordenadasService;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 

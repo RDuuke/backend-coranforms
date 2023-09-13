@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 @RestController
 public class ProblematicaGuardarController {
@@ -18,6 +19,7 @@ public class ProblematicaGuardarController {
     public @ResponseBody
      ProblematicaGuardarDTO guardarProblematica(
                                 @RequestParam(value = "niSecEEta") BigDecimal niSecEEta,
+                                @RequestParam(value = "nioLinea") String nioLinea,
                                 @RequestParam(name = "viUsuario") String viUsuario,
                                 @RequestParam(value = "viTipo") String viTipo,
                                  @RequestParam(value = "niIntensidad") BigDecimal niIntensidad,
@@ -28,13 +30,16 @@ public class ProblematicaGuardarController {
                                  @RequestParam(value = "niProbabilidadOcurrencia") BigDecimal niProbabilidadOcurrencia,
                                 @RequestParam(value = "ciJustificacionImportancia") String ciJustificacionImportancia,
                                 @RequestParam(value = "ciJustificacionriesgo") String ciJustificacionriesgo,
-                                @RequestParam(value = "ciJustificacionGnral") String ciJustificacionGnral
+                                @RequestParam(value = "ciJustificacionGnral") String ciJustificacionGnral,
+                                @RequestParam(value = "ciJustificacionAgentes") String ciJustificacionAgentes,
+                                @RequestParam(value = "tiAgentesPeligro") ArrayList<String> tiAgentesPeligro
     ) {
         ProblematicaGuardarDTO problematicaGuardarDTO = new ProblematicaGuardarDTO();
 
-        problematicaGuardarDTO.setNiSecEEta(niSecEEta);
-        problematicaGuardarDTO.setViUsuario(viUsuario);
-        problematicaGuardarDTO.setViTipo(viTipo);
+         problematicaGuardarDTO.setNiSecEEta(niSecEEta);
+         problematicaGuardarDTO.setNioLinea(nioLinea);
+         problematicaGuardarDTO.setViUsuario(viUsuario);
+         problematicaGuardarDTO.setViTipo(viTipo);
          problematicaGuardarDTO.setNiIntensidad(niIntensidad);
          problematicaGuardarDTO.setNiExtension(niExtension);
          problematicaGuardarDTO.setNiPersistencia(niPersistencia);
@@ -44,6 +49,8 @@ public class ProblematicaGuardarController {
          problematicaGuardarDTO.setJustificacion_importancia(ciJustificacionImportancia);
          problematicaGuardarDTO.setJustificacion_riesgo(ciJustificacionriesgo);
          problematicaGuardarDTO.setJustificacion_gnral(ciJustificacionGnral);
+         problematicaGuardarDTO.setJustificacion_agente(ciJustificacionAgentes);
+         problematicaGuardarDTO.setTipos_agente_peligro(tiAgentesPeligro);
 
         return  this.problematicaGuardarService.guardarProblematica(problematicaGuardarDTO);
     }

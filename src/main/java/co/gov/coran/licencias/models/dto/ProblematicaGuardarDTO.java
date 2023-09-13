@@ -1,10 +1,13 @@
 package co.gov.coran.licencias.models.dto;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class ProblematicaGuardarDTO {
 
    private BigDecimal niSecEEta;
+
+   private String nioLinea;
    private String viUsuario;
     private String viTipo;
     private BigDecimal niIntensidad;
@@ -16,6 +19,9 @@ public class ProblematicaGuardarDTO {
     private String justificacion_importancia;
     private String justificacion_riesgo;
     private String justificacion_gnral;
+    private String justificacion_agente;
+    private List<String> tipos_agente_peligro;
+
     public String voerror;
 
     public BigDecimal getNiSecEEta() {
@@ -121,5 +127,29 @@ public class ProblematicaGuardarDTO {
 
     public void setVoerror(String voerror) {
         this.voerror = voerror;
+    }
+
+    public String getJustificacion_agente() {
+        return justificacion_agente;
+    }
+
+    public void setJustificacion_agente(String justificacion_agente) {
+        this.justificacion_agente = justificacion_agente;
+    }
+
+    public List<String> getTipos_agente_peligro() {
+        return tipos_agente_peligro;
+    }
+
+    public void setTipos_agente_peligro(List<String> tipos_agente_peligro) {
+        this.tipos_agente_peligro = tipos_agente_peligro;
+    }
+
+    public String getNioLinea() {
+        return nioLinea;
+    }
+
+    public void setNioLinea(String nioLinea) {
+        this.nioLinea = nioLinea;
     }
 }
