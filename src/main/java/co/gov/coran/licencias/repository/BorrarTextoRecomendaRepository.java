@@ -13,7 +13,7 @@ public class BorrarTextoRecomendaRepository {
 
     private final EntityManager entityManager;
 
-    private static final String storeProcedureName = "sirena.pks_it_gnral.borrar_texto_recomenda";
+    private static final String BORRAR_TEXTO_RECOMENDA = "sirena.pks_it_gnral.borrar_texto_recomenda";
 
     BorrarTextoRecomendaRepository(EntityManager entityManager){
         this.entityManager = entityManager;
@@ -21,14 +21,14 @@ public class BorrarTextoRecomendaRepository {
 
     public String borrarTextoRecomenda(BorrarTextoRecomendaDTO borrarTextoRecomendaDTO){
 
-        StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(storeProcedureName);
+        StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(BORRAR_TEXTO_RECOMENDA);
         storedProcedureQuery.registerStoredProcedureParameter("niSecEEta", BigDecimal.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("niLinea", BigDecimal.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("nioLinea", BigDecimal.class, ParameterMode.INOUT);
         storedProcedureQuery.registerStoredProcedureParameter("viIdUsuario", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("voError", String.class, ParameterMode.OUT);
 
-        storedProcedureQuery.setParameter("niSecEEta", borrarTextoRecomendaDTO.getNiSec());
-        storedProcedureQuery.setParameter("niLinea", borrarTextoRecomendaDTO.getNioLinea());
+        storedProcedureQuery.setParameter("niSecEEta", borrarTextoRecomendaDTO.getNiSecEEta());
+        storedProcedureQuery.setParameter("nioLinea", borrarTextoRecomendaDTO.getNioLinea());
         storedProcedureQuery.setParameter("viIdUsuario", borrarTextoRecomendaDTO.getViIdUsuario());
 
         storedProcedureQuery.execute();
