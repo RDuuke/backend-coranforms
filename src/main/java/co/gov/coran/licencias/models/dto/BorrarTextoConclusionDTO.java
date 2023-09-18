@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class BorrarTextoConclusionDTO {
 
-    private BigDecimal niSec;
+    private BigDecimal niSecEEta;
 
     private BigDecimal nioLinea;
 
@@ -12,38 +12,35 @@ public class BorrarTextoConclusionDTO {
 
     private String voError;
 
-    public void setNiSec(BigDecimal niSec){
-        this.niSec = niSec;
+    public BigDecimal getNiSecEEta() {
+        return niSecEEta;
     }
 
-    public BigDecimal getNiSec() {
-        return niSec;
+    public void setNiSecEEta(BigDecimal niSecEEta) {
+        this.niSecEEta = niSecEEta;
     }
 
+    public BigDecimal getNioLinea() {
+        return nioLinea;
+    }
 
-    public void setNioLinea(BigDecimal nioLinea){
+    public void setNioLinea(BigDecimal nioLinea) {
         this.nioLinea = nioLinea;
     }
 
-    public BigDecimal getNioLinea(){
-        return this.nioLinea;
-    }
-
-
-    public void setViIdUsuario(String viIdUsuario){
-        this.viIdUsuario = viIdUsuario;
-    }
-
-    public String getViIdUsuario(){
+    public String getViIdUsuario() {
         return viIdUsuario;
     }
 
-
-    public void setVoError(String voError){
-        this.voError = voError;
+    public void setViIdUsuario(String viIdUsuario) {
+        this.viIdUsuario = viIdUsuario;
     }
 
-    public String getVoError(){
-        return this.voError;
+    public String getVoError() {
+        return voError;
+    }
+
+    public void setVoError(String voError) {
+        this.voError = voError;
     }
 }

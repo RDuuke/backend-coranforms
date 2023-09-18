@@ -4,46 +4,43 @@ import java.math.BigDecimal;
 
 public class BorrarAntecedenteDTO {
 
-    private BigDecimal niSec;
+    private BigDecimal niSecEEta;
 
-    private BigDecimal nioLinea;
+    private BigDecimal niSecDoc;
 
     private String  viIdUsuario;
 
     private String voError;
 
-    public void setNiSec(BigDecimal niSec){
-        this.niSec = niSec;
+    public BigDecimal getNiSecEEta() {
+        return niSecEEta;
     }
 
-    public BigDecimal getNiSec() {
-        return niSec;
+    public void setNiSecEEta(BigDecimal niSecEEta) {
+        this.niSecEEta = niSecEEta;
     }
 
-
-    public void setNioLinea(BigDecimal nioLinea){
-        this.nioLinea = nioLinea;
+    public BigDecimal getNiSecDoc() {
+        return niSecDoc;
     }
 
-    public BigDecimal getNioLinea(){
-        return this.nioLinea;
+    public void setNiSecDoc(BigDecimal niSecDoc) {
+        this.niSecDoc = niSecDoc;
     }
 
-
-    public void setViIdUsuario(String viIdUsuario){
-        this.viIdUsuario = viIdUsuario;
-    }
-
-    public String getViIdUsuario(){
+    public String getViIdUsuario() {
         return viIdUsuario;
     }
 
-
-    public void setVoError(String voError){
-        this.voError = voError;
+    public void setViIdUsuario(String viIdUsuario) {
+        this.viIdUsuario = viIdUsuario;
     }
 
-    public String getVoError(){
-        return this.voError;
+    public String getVoError() {
+        return voError;
+    }
+
+    public void setVoError(String voError) {
+        this.voError = voError;
     }
 }

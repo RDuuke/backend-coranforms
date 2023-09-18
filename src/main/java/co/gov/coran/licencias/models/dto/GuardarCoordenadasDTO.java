@@ -4,21 +4,21 @@ import java.math.BigDecimal;
 
 public class GuardarCoordenadasDTO {
 
-    public BigDecimal niSecEEta;
+    private BigDecimal niSecEEta;
 
-    public String viUsuario;
+    private String viUsuario;
 
-    public BigDecimal  niLinea;
-    public BigDecimal niSecCaptacion;
-    public  BigDecimal niSecVertimiento;
-    public  BigDecimal niSistemaCoorde;
-    public BigDecimal niX;
-    public BigDecimal niY;
-    public String viTipoCoorde;
-    public String  viDescripcion;
-    public  String viObservaciones;
+    private BigDecimal  niLinea;
+    private BigDecimal niSecCaptacion;
+    private  BigDecimal niSecVertimiento;
+    private  BigDecimal niSistemaCoorde;
+    private BigDecimal niX;
+    private BigDecimal niY;
+    private String viTipoCoorde;
+    private String  viDescripcion;
+    private  String viObservaciones;
 
-    public String  voError;
+    private String  voError;
 
     public BigDecimal getNiSecEEta() {
         return niSecEEta;

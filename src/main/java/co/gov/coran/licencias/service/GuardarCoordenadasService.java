@@ -2,6 +2,8 @@ package co.gov.coran.licencias.service;
 
 import co.gov.coran.licencias.models.dto.GuardarCoordenadasDTO;
 
+import java.util.List;
+
 public interface GuardarCoordenadasService {
-    GuardarCoordenadasDTO guardarCoord(GuardarCoordenadasDTO guardarCoordenadasDTO);
+    List<GuardarCoordenadasDTO> guardarCoordenadas(List<GuardarCoordenadasDTO> guardarCoordenadasDTOList);
 }

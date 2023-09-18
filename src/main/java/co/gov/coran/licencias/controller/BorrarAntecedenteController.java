@@ -12,7 +12,7 @@ public class BorrarAntecedenteController {
     @Autowired
     private BorrarAntecedenteService borrarAntecedenteService;
 
-    @PostMapping("/borrar_antecedente")
+    @PostMapping("/Borrar_antecedente")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
 
