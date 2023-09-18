@@ -11,14 +11,18 @@ import java.util.List;
 
 @RestController
 public class GuardarCoordenadasController {
-    @Autowired
-    private GuardarCoordenadasService guardarCoordenadasService;
+    private final GuardarCoordenadasService guardarCoordenadasService;
 
+    public GuardarCoordenadasController(GuardarCoordenadasService guardarCoordenadasService) {
+        this.guardarCoordenadasService = guardarCoordenadasService;
+    }
 
     @PostMapping(value ="/guardar_coordenadas")
     @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<String> guardarCoord(@RequestBody List<GuardarCoordenadasDTO> guardarCoordenadasDTOList){
-        return ResponseEntity.ok("Cordenadas guardadas exitosamente");
+    public ResponseEntity<List<GuardarCoordenadasDTO>> guardarCoordenadas(@RequestBody List<GuardarCoordenadasDTO> guardarCoordenadasDTOList){
+        List<GuardarCoordenadasDTO> nuevasCoordenadas = guardarCoordenadasService.guardarCoordenadas(guardarCoordenadasDTOList);
+        return new ResponseEntity<>(nuevasCoordenadas, HttpStatus.CREATED);
+
     }
 
 }
