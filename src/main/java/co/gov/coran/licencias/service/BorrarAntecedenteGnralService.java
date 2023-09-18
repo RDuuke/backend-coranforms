@@ -1,7 +1,7 @@
 package co.gov.coran.licencias.service;
 
-import co.gov.coran.licencias.models.dto.BorrarAntecedenteGenralDTO;
+import co.gov.coran.licencias.models.dto.BorrarAntecedenteDTO;
 
 public interface BorrarAntecedenteGnralService {
-    String borrarAntecedenteGnral(BorrarAntecedenteGenralDTO borrarAntecedenteGenralDTO);
+    String borrarAntecedenteGnral(BorrarAntecedenteDTO borrarAntecedenteDTO);
 }
