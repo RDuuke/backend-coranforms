@@ -25,6 +25,7 @@ public class CoordenadasConsultaDTO {
     private String observaciones;
     private Date Fecha_creacion;
     private String creado_por;
+    private char registro_original;
 
     public BigDecimal getLinea() {
         return linea;
@@ -192,5 +193,13 @@ public class CoordenadasConsultaDTO {
 
     public void setCreado_por(String creado_por) {
         this.creado_por = creado_por;
+    }
+
+    public char getRegistro_original() {
+        return registro_original;
+    }
+
+    public void setRegistro_original(char registro_original) {
+        this.registro_original = registro_original;
     }
 }

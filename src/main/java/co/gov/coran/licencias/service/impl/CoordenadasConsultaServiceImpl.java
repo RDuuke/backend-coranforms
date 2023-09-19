@@ -56,8 +56,7 @@ public class CoordenadasConsultaServiceImpl implements CoordenadasConsultaServic
             coordenadasConsultaDTO.setObservaciones((String) coordenadaAux[18]);
             coordenadasConsultaDTO.setFecha_creacion((Date) coordenadaAux[19]);
             coordenadasConsultaDTO.setCreado_por((String) coordenadaAux[20]);
-
-
+            coordenadasConsultaDTO.setRegistro_original((char) coordenadaAux[21]);
 
             coordenadas.add(coordenadasConsultaDTO);
         }
