@@ -50,11 +50,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.oracle</groupId>
+			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc6</artifactId>
-			<version>11.2.0</version>
-			<!--<scope>system</scope>
-			<systemPath>${pom.basedir}/lib/ojdbc6-11.2.0.3.jar</systemPath>-->
+			<version>11.2.0.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.poi</groupId>
