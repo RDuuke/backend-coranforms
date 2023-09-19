@@ -57,10 +57,14 @@ public class ProblematicaGuardarRepository {
         storedProcedureQuery.execute();
 
         Object  voError =  storedProcedureQuery.getOutputParameterValue("voError");
+        Object  nioLinea =  storedProcedureQuery.getOutputParameterValue("nioLinea");
+
 
         System.out.println(voError);
 
+
         problematicaGuardarDTO.setVoerror(String.valueOf(storedProcedureQuery.getOutputParameterValue("voError")));
+        problematicaGuardarDTO.setNioLinea((String) storedProcedureQuery.getOutputParameterValue("nioLinea"));
         entityManager.close();
         return problematicaGuardarDTO;
 

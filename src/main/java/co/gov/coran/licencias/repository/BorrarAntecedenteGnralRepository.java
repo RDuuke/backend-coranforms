@@ -26,8 +26,8 @@ public class BorrarAntecedenteGnralRepository {
         storedProcedureQuery.registerStoredProcedureParameter("viIdUsuario", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("voError", String.class, ParameterMode.OUT);
 
-        storedProcedureQuery.setParameter("niSecEEta", borrarAntecedenteDTO.getNiSec());
-        storedProcedureQuery.setParameter("nioLinea", borrarAntecedenteDTO.getNioLinea());
+        storedProcedureQuery.setParameter("niSecEEta", borrarAntecedenteDTO.getNiSecEEta());
+        storedProcedureQuery.setParameter("nioLinea", borrarAntecedenteDTO.getNiSecDoc());
         storedProcedureQuery.setParameter("viIdUsuario", borrarAntecedenteDTO.getViIdUsuario());
 
         storedProcedureQuery.execute();

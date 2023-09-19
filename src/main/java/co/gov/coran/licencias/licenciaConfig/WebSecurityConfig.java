@@ -58,7 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         web.ignoring().antMatchers("/v2/api-docs", "/configuration/ui", "/swagger-resources/**",
                 "/configuration/security", "/swagger-ui.html", "/webjars/**",
                 "/register/client/hello", "/error", "/csrf", "/", "/resource/login",
-                "/guardar_firma","/guardar_ObligacionIt","/asignacionesF", "/guardar_conclusion",
+                "/guardar_firma","/firmas","/guardar_ObligacionIt","/asignacionesF", "/guardar_conclusion",
                 "/editar_coordenada","/guardar_problematica","/guardar_recomendacion","/consulta_obligacionesIt",
                 "/situacion_consulta","/guardar_situacion","/folder/","/problematica_consulta","/guardar_analisis",
                 "/analisis_consulta","/borrar_antecedente","/guardar_antecedente","/consulta_coordenadas","/guardar_general_ant",

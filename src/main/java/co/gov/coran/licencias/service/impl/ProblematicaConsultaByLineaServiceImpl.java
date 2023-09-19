@@ -27,32 +27,21 @@ public class ProblematicaConsultaByLineaServiceImpl implements ProblematicaConsu
     public ProblematicaGuardarDTO problematicaItem(BigDecimal niSecEEta, BigDecimal niLinea) {
         ProblematicaGuardarDTO problematicaItem = new ProblematicaGuardarDTO();
         List<Object> objects = this.problematicaConsultaByLineaRepository.problematicaConsultaItem(niSecEEta, niLinea);
-        System.out.println(objects.size());
         for (Object problemaOb : objects) {
             Object[] problemAux = (Object[]) problemaOb;
-
-            problematicaItem.setNioLinea(niLinea.toString());
-            problematicaItem.setNiSecEEta(niSecEEta);
-            problematicaItem.setViTipo((String) problemAux[0]);
-            problematicaItem.setNiIntensidad((BigDecimal) problemAux[1]);
-            problematicaItem.setNiExtension((BigDecimal) problemAux[2]);
-            problematicaItem.setNiPersistencia((BigDecimal) problemAux[3]);
-            problematicaItem.setNiReversibilidad((BigDecimal) problemAux[4]);
-            problematicaItem.setNiRecuperabilidad((BigDecimal) problemAux[5]);
-            problematicaItem.setNiProbabilidadOcurrencia((BigDecimal) problemAux[6]);
-            try{ Clob lob = (Clob) problemAux[7];
-                problematicaItem.setJustificacion_importancia(clobToString(lob));}catch (Exception e){}
-
-            try{ Clob lob = (Clob) problemAux[8];
-                problematicaItem.setJustificacion_riesgo(clobToString(lob));}catch (Exception e){}
-
-            try{ Clob lob = (Clob) problemAux[9];
+            problematicaItem.setNioLinea(problemAux[1].toString());
+            problematicaItem.setNiSecEEta(new BigDecimal(problemAux[0].toString()));
+            problematicaItem.setViTipo((String) problemAux[2]);
+            problematicaItem.setNiIntensidad((BigDecimal) problemAux[3]);
+            problematicaItem.setNiExtension((BigDecimal) problemAux[4]);
+            problematicaItem.setNiPersistencia((BigDecimal) problemAux[5]);
+            problematicaItem.setNiReversibilidad((BigDecimal) problemAux[6]);
+            problematicaItem.setNiRecuperabilidad((BigDecimal) problemAux[7]);
+            problematicaItem.setNiProbabilidadOcurrencia((BigDecimal) problemAux[8]);
+            try{ Clob lob = (Clob) problemAux[11];
                 problematicaItem.setJustificacion_gnral(clobToString(lob));}catch (Exception e){}
 
-            try{ Clob lob = (Clob) problemAux[10];
-                problematicaItem.setJustificacion_gnral(clobToString(lob));}catch (Exception e){}
-
-            problematicaItem.setViUsuario((String) problemAux[12]);
+            problematicaItem.setViUsuario((String) problemAux[14]);
         }
         return  problematicaItem;
     }
