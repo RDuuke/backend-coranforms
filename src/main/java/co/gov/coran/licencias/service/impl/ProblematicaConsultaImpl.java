@@ -38,8 +38,8 @@ public class ProblematicaConsultaImpl implements ProblamaConsultaService {
 
             ProblemaConsultaDTO problemaConsultaDTO = new ProblemaConsultaDTO();
 
-            problemaConsultaDTO.setLinea((BigDecimal) problemAux[0]);
-            problemaConsultaDTO.setEeta_sec((BigDecimal) problemAux[1]);
+            problemaConsultaDTO.setLinea((BigDecimal) problemAux[1]);
+            problemaConsultaDTO.setEeta_sec((BigDecimal) problemAux[0]);
             problemaConsultaDTO.setTipo((String) problemAux[2]);
             problemaConsultaDTO.setTipo_txt((String) problemAux[3]);
             problemaConsultaDTO.setIntensidad((BigDecimal) problemAux[4]);
