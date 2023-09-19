@@ -29,6 +29,7 @@ public class ProblematicaConsultaByLineaServiceImpl implements ProblematicaConsu
         List<Object> objects = this.problematicaConsultaByLineaRepository.problematicaConsultaItem(niSecEEta, niLinea);
         for (Object problemaOb : objects) {
             Object[] problemAux = (Object[]) problemaOb;
+
             problematicaItem.setNioLinea(problemAux[1].toString());
             problematicaItem.setNiSecEEta(new BigDecimal(problemAux[0].toString()));
             problematicaItem.setViTipo((String) problemAux[2]);
@@ -38,8 +39,17 @@ public class ProblematicaConsultaByLineaServiceImpl implements ProblematicaConsu
             problematicaItem.setNiReversibilidad((BigDecimal) problemAux[6]);
             problematicaItem.setNiRecuperabilidad((BigDecimal) problemAux[7]);
             problematicaItem.setNiProbabilidadOcurrencia((BigDecimal) problemAux[8]);
-            try{ Clob lob = (Clob) problemAux[11];
+            try{ Clob lob = (Clob) problemAux[10];
                 problematicaItem.setJustificacion_gnral(clobToString(lob));}catch (Exception e){}
+
+            try{ Clob lob = (Clob) problemAux[9];
+                problematicaItem.setJustificacion_riesgo(clobToString(lob));}catch (Exception e){}
+
+            try{ Clob lob = (Clob) problemAux[11];
+                problematicaItem.setJustificacion_importancia(clobToString(lob));}catch (Exception e){}
+
+            try{ Clob lob = (Clob) problemAux[12];
+                problematicaItem.setJustificacion_agente(clobToString(lob));}catch (Exception e){}
 
             problematicaItem.setViUsuario((String) problemAux[14]);
         }
