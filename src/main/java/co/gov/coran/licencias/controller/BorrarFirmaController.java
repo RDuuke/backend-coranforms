@@ -14,7 +14,7 @@ public class BorrarFirmaController {
     @Autowired
     private BorrarFirmaService borrarFirmaService;
 
-    @DeleteMapping("/borrar_firma")
+    @DeleteMapping("/borrar_firmante")
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody
     String borrarFirma(
