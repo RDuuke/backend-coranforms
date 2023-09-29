@@ -1,6 +1,7 @@
 package co.gov.coran.licencias.repository;
 
 import co.gov.coran.licencias.models.dto.BorrarAntecedenteDTO;
+import co.gov.coran.licencias.models.dto.BorrarAntecedenteGnralDTO;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -13,22 +14,22 @@ public class BorrarAntecedenteGnralRepository {
 
     private final EntityManager entityManager;
 
-    private static final String storeProcedureName = "sirena.pks_it_gnral.borrar_antecedente_gnral";
+    private static final String BORRAR_ANTECEDENTE_GNRAL = "sirena.pks_it_gnral.borrar_antecedente_gnral";
 
     BorrarAntecedenteGnralRepository(EntityManager entityManager){
         this.entityManager = entityManager;
     }
 
-    public String borrarAntecedenteGnral(BorrarAntecedenteDTO borrarAntecedenteDTO){
-        StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(storeProcedureName);
+    public String borrarAntecedenteGnral(BorrarAntecedenteGnralDTO borrarAntecedenteGnralDTO){
+        StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(BORRAR_ANTECEDENTE_GNRAL);
         storedProcedureQuery.registerStoredProcedureParameter("niSecEEta", BigDecimal.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("nioLinea", BigDecimal.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("nioLinea", BigDecimal.class, ParameterMode.INOUT);
         storedProcedureQuery.registerStoredProcedureParameter("viIdUsuario", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("voError", String.class, ParameterMode.OUT);
 
-        storedProcedureQuery.setParameter("niSecEEta", borrarAntecedenteDTO.getNiSecEEta());
-        storedProcedureQuery.setParameter("nioLinea", borrarAntecedenteDTO.getNiSecDoc());
-        storedProcedureQuery.setParameter("viIdUsuario", borrarAntecedenteDTO.getViIdUsuario());
+        storedProcedureQuery.setParameter("niSecEEta", borrarAntecedenteGnralDTO.getNiSecEEta());
+        storedProcedureQuery.setParameter("nioLinea", borrarAntecedenteGnralDTO.getNioLinea());
+        storedProcedureQuery.setParameter("viIdUsuario", borrarAntecedenteGnralDTO.getViIdUsuario());
 
         storedProcedureQuery.execute();
 
