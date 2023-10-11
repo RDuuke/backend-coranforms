@@ -2,7 +2,6 @@ package co.gov.coran.licencias.repository;
 
 import co.gov.coran.licencias.models.dto.BorrarSituacionEncontradaObligacionDTO;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.ParameterMode;
 import javax.persistence.StoredProcedureQuery;
@@ -27,8 +26,8 @@ public class BorrarSituacionEncontradaObligacionRepository {
         storedProcedureQuery.registerStoredProcedureParameter("viIdUsuario", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("voError", String.class, ParameterMode.OUT);
 
-        storedProcedureQuery.setParameter("niSecEEta", borrarSituacionEncontradaObligacionDTO.getNiSec());
-        storedProcedureQuery.setParameter("niLinea", borrarSituacionEncontradaObligacionDTO.getNioLinea());
+        storedProcedureQuery.setParameter("niSecEEta", borrarSituacionEncontradaObligacionDTO.getNiSecEEta());
+        storedProcedureQuery.setParameter("niLinea", borrarSituacionEncontradaObligacionDTO.getNiLinea());
         storedProcedureQuery.setParameter("viIdUsuario", borrarSituacionEncontradaObligacionDTO.getViIdUsuario());
 
         storedProcedureQuery.execute();
