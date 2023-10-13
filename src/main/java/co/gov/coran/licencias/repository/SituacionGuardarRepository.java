@@ -1,27 +1,24 @@
 package co.gov.coran.licencias.repository;
 
-import co.gov.coran.licencias.models.dto.SituacionEncontradaDTO;
+import co.gov.coran.licencias.models.dto.SituacionGuardarDTO;
 import org.springframework.stereotype.Repository;
-
 import javax.persistence.EntityManager;
 import javax.persistence.ParameterMode;
 import javax.persistence.StoredProcedureQuery;
 import java.math.BigDecimal;
 
 @Repository
-public class SituacionEncontradaRepository {
+public class SituacionGuardarRepository {
     private final EntityManager entityManager;
     private static final String GUARDAR_SITUACION="sirena.pks_it_gnral.guardar_situa_encontrada";
-
-    public SituacionEncontradaRepository(EntityManager entityManager) {this.entityManager = entityManager;}
-
-    public SituacionEncontradaDTO guardarSituacionE(SituacionEncontradaDTO situacionEncontradaDTO){
+    SituacionGuardarRepository(EntityManager entityManager) {this.entityManager = entityManager;}
+    public SituacionGuardarDTO guardarSituacionE(SituacionGuardarDTO situacionGuardarDTO){
         String voerror = null;
         StoredProcedureQuery storedProcedureQuery = entityManager.createStoredProcedureQuery(GUARDAR_SITUACION);
         storedProcedureQuery.registerStoredProcedureParameter("niSecEEta", BigDecimal.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("nioLinea", Integer.class, ParameterMode.INOUT);
+        storedProcedureQuery.registerStoredProcedureParameter("nioLinea", String.class, ParameterMode.INOUT);
         storedProcedureQuery.registerStoredProcedureParameter("viTipo", String.class, ParameterMode.IN);
-        storedProcedureQuery.registerStoredProcedureParameter("niLineaObliga", String.class, ParameterMode.IN);
+        storedProcedureQuery.registerStoredProcedureParameter("niLineaObliga", String.class, ParameterMode.INOUT);
         storedProcedureQuery.registerStoredProcedureParameter("viTitulo", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("niSistemaCoordenadas", BigDecimal.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("niX", BigDecimal.class, ParameterMode.IN);
@@ -32,18 +29,18 @@ public class SituacionEncontradaRepository {
         storedProcedureQuery.registerStoredProcedureParameter("viIdUsuario", String.class, ParameterMode.IN);
         storedProcedureQuery.registerStoredProcedureParameter("voError", String.class, ParameterMode.OUT);
 
-        storedProcedureQuery.setParameter("niSecEEta", situacionEncontradaDTO.getNiSecEEta());
-        storedProcedureQuery.setParameter("nioLinea", situacionEncontradaDTO.getNioLinea());
-        storedProcedureQuery.setParameter("viTipo", situacionEncontradaDTO.getViTipo());
-        storedProcedureQuery.setParameter("niLineaObliga", situacionEncontradaDTO.getNiLineaObliga());
-        storedProcedureQuery.setParameter("viTitulo", situacionEncontradaDTO.getViTitulo());
-        storedProcedureQuery.setParameter("niSistemaCoordenadas", situacionEncontradaDTO.getNiSistemaCoordenadas());
-        storedProcedureQuery.setParameter("niX", situacionEncontradaDTO.getNiX());
-        storedProcedureQuery.setParameter("niY", situacionEncontradaDTO.getNiY());
-        storedProcedureQuery.setParameter("niCota", situacionEncontradaDTO.getNiCota());
-        storedProcedureQuery.setParameter("ciTexto", situacionEncontradaDTO.getCiTexto());
-        storedProcedureQuery.setParameter("ciImagenes", situacionEncontradaDTO.getCiImagenes());
-        storedProcedureQuery.setParameter("viIdUsuario", situacionEncontradaDTO.getViIdUsuario());
+        storedProcedureQuery.setParameter("niSecEEta", situacionGuardarDTO.getNiSecEEta());
+        storedProcedureQuery.setParameter("nioLinea", situacionGuardarDTO.getNioLinea());
+        storedProcedureQuery.setParameter("viTipo", situacionGuardarDTO.getViTipo());
+        storedProcedureQuery.setParameter("niLineaObliga", situacionGuardarDTO.getNiLineaObliga());
+        storedProcedureQuery.setParameter("viTitulo", situacionGuardarDTO.getViTitulo());
+        storedProcedureQuery.setParameter("niSistemaCoordenadas", situacionGuardarDTO.getNiSistemaCoordenadas());
+        storedProcedureQuery.setParameter("niX", situacionGuardarDTO.getNiX());
+        storedProcedureQuery.setParameter("niY", situacionGuardarDTO.getNiY());
+        storedProcedureQuery.setParameter("niCota", situacionGuardarDTO.getNiCota());
+        storedProcedureQuery.setParameter("ciTexto", situacionGuardarDTO.getCiTexto());
+        storedProcedureQuery.setParameter("ciImagenes", situacionGuardarDTO.getCiImagenes());
+        storedProcedureQuery.setParameter("viIdUsuario", situacionGuardarDTO.getViIdUsuario());
 
         storedProcedureQuery.execute();
 
@@ -51,10 +48,10 @@ public class SituacionEncontradaRepository {
 
         System.out.println(voError);
 
-        situacionEncontradaDTO.setVoError(String.valueOf(storedProcedureQuery.getOutputParameterValue("voError")));
+        situacionGuardarDTO.setVoError(String.valueOf(storedProcedureQuery.getOutputParameterValue("voError")));
         entityManager.close();
 
-        return situacionEncontradaDTO;
+        return situacionGuardarDTO;
 
 
     }
