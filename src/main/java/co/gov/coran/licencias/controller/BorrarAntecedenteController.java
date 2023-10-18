@@ -8,14 +8,11 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class BorrarAntecedenteController {
-
     @Autowired
     private BorrarAntecedenteService borrarAntecedenteService;
-
     @PostMapping("/Borrar_antecedente")
     @ResponseStatus(HttpStatus.OK)
     @ResponseBody
-
     public String borrarAntecedente(@RequestBody BorrarAntecedenteDTO borrarAntecedenteDTO){
         return this.borrarAntecedenteService.borrarAntecedente(borrarAntecedenteDTO);
     }

@@ -8,14 +8,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class BorrarAntecedenteImpl implements BorrarAntecedenteService {
-
     @Autowired
     private BorrarAntecenteRepository borrarAntecenteRepository;
-
     public String borrarAntecedente(BorrarAntecedenteDTO borrarAntecedenteDTO){
-
        return this.borrarAntecenteRepository.borrarAntecedente(borrarAntecedenteDTO);
-
     }
-
 }
