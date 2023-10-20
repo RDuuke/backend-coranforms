@@ -1,7 +1,7 @@
 package co.gov.coran.licencias.repository;
 
 import co.gov.coran.licencias.models.dto.SituacionGuardarDTO;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Repository;;
 import javax.persistence.EntityManager;
 import javax.persistence.ParameterMode;
 import javax.persistence.StoredProcedureQuery;
