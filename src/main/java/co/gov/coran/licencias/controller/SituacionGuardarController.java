@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import javax.sql.rowset.serial.SerialBlob;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
+import java.util.Base64;
+
 @RestController
 public class SituacionGuardarController {
     @Autowired
@@ -28,13 +29,12 @@ public class SituacionGuardarController {
             @RequestParam(value = "niY") BigDecimal niY,
             @RequestParam(value = "niCota") BigDecimal niCota,
             @RequestParam(value = "ciTexto") String ciTexto,
-            @RequestParam(value = "ciImagenes") MultipartFile ciImagenes,
+            @RequestPart(value = "ciImagenes") MultipartFile  ciImagenes,
             @RequestParam(value = "viIdUsuario") String viIdUsuario
     ) throws IOException, SQLException {
         SituacionGuardarDTO situacionGuardarDTO = new SituacionGuardarDTO();
 
         try {
-            // Set DTO parameters
             situacionGuardarDTO.setNiSecEEta(niSecEEta);
             situacionGuardarDTO.setNioLinea(String.valueOf(nioLinea));
             situacionGuardarDTO.setViTipo(viTipo);
@@ -46,14 +46,17 @@ public class SituacionGuardarController {
             situacionGuardarDTO.setNiCota(niCota);
             situacionGuardarDTO.setCiTexto(ciTexto);
             situacionGuardarDTO.setViIdUsuario(viIdUsuario);
-        } catch (NumberFormatException ignored) {
-        }
 
-        situacionGuardarDTO.setCiImagenes(new SerialBlob(ciImagenes.getBytes()).toString());
+        } catch (NumberFormatException ignored) {}
+
+        String imageBase64 = Base64.getEncoder().encodeToString(ciImagenes.getBytes());
+        situacionGuardarDTO.setCiImagenes(imageBase64);
 
         return this.situacionGuardarService.guardarSituacionEncontrada(situacionGuardarDTO);
     }
 }
+
+
 
 
 
