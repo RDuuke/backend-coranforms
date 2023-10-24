@@ -1,26 +1,25 @@
 package co.gov.coran.licencias.controller;
-
-import co.gov.coran.licencias.models.dto.SituacionGuardarDTO;
-import co.gov.coran.licencias.service.SituacionGuardarService;
+import co.gov.coran.licencias.models.dto.SituacionEncontradaDTO;
+import co.gov.coran.licencias.service.SituacionEncontradaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.sql.SQLException;
-import java.util.Base64;
 
 @RestController
 public class SituacionGuardarController {
     @Autowired
-    private SituacionGuardarService situacionGuardarService;
+    private SituacionEncontradaService situacionEncontradaService;
 
     @PostMapping(value = "/guardar_situacion")
     @ResponseStatus(HttpStatus.OK)
-    public @ResponseBody SituacionGuardarDTO guardarSituacionE(
+    public @ResponseBody
+    SituacionEncontradaDTO guardarSituacionE(
             @RequestParam(value = "niSecEEta") BigDecimal niSecEEta,
-            @RequestParam(value = "nioLinea") String nioLinea,
+            @RequestParam(value = "nioLinea") Integer nioLinea,
             @RequestParam(value = "viTipo") String viTipo,
             @RequestParam(value = "niLineaObliga") String niLineaObliga,
             @RequestParam(value = "viTitulo") String viTitulo,
@@ -29,30 +28,31 @@ public class SituacionGuardarController {
             @RequestParam(value = "niY") BigDecimal niY,
             @RequestParam(value = "niCota") BigDecimal niCota,
             @RequestParam(value = "ciTexto") String ciTexto,
-            @RequestPart(value = "ciImagenes") MultipartFile  ciImagenes,
+            @RequestParam(value = "ciImagenes") String ciImagenes,
             @RequestParam(value = "viIdUsuario") String viIdUsuario
+
     ) throws IOException, SQLException {
-        SituacionGuardarDTO situacionGuardarDTO = new SituacionGuardarDTO();
+        SituacionEncontradaDTO situacionEncontradaDTO = new SituacionEncontradaDTO();
 
         try {
-            situacionGuardarDTO.setNiSecEEta(niSecEEta);
-            situacionGuardarDTO.setNioLinea(String.valueOf(nioLinea));
-            situacionGuardarDTO.setViTipo(viTipo);
-            situacionGuardarDTO.setNiLineaObliga(String.valueOf(niLineaObliga));
-            situacionGuardarDTO.setViTitulo(viTitulo);
-            situacionGuardarDTO.setNiSistemaCoordenadas(niSistemaCoordenadas);
-            situacionGuardarDTO.setNiX(niX);
-            situacionGuardarDTO.setNiY(niY);
-            situacionGuardarDTO.setNiCota(niCota);
-            situacionGuardarDTO.setCiTexto(ciTexto);
-            situacionGuardarDTO.setViIdUsuario(viIdUsuario);
+            situacionEncontradaDTO.setNiSecEEta(niSecEEta);
+            situacionEncontradaDTO.setNioLinea(nioLinea);
+            situacionEncontradaDTO.setViTipo(viTipo);
+            situacionEncontradaDTO.setNiLineaObliga(niLineaObliga);
+            situacionEncontradaDTO.setViTitulo(viTitulo);
+            situacionEncontradaDTO.setNiSistemaCoordenadas(niSistemaCoordenadas);
+            situacionEncontradaDTO.setNiX(niX);
+            situacionEncontradaDTO.setNiY(niY);
+            situacionEncontradaDTO.setNiCota(niCota);
+            situacionEncontradaDTO.setViIdUsuario(viIdUsuario);
 
-        } catch (NumberFormatException ignored) {}
+        } catch (NumberFormatException ignored) {
+        }
 
-        String imageBase64 = Base64.getEncoder().encodeToString(ciImagenes.getBytes());
-        situacionGuardarDTO.setCiImagenes(imageBase64);
+        situacionEncontradaDTO.setCiTexto(ciTexto);
+        situacionEncontradaDTO.setCiImagenes(ciImagenes);
 
-        return this.situacionGuardarService.guardarSituacionEncontrada(situacionGuardarDTO);
+        return this.situacionEncontradaService.guardarSituacionE(situacionEncontradaDTO);
     }
 }
 

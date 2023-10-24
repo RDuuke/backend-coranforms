@@ -2,20 +2,20 @@ package co.gov.coran.licencias.models.dto;
 
 import java.math.BigDecimal;
 
-public class SituacionGuardarDTO {
-     private BigDecimal niSecEEta;
-		private String nioLinea;
-		private String viTipo;
-		private String niLineaObliga;
-		private String viTitulo;
-        private BigDecimal niSistemaCoordenadas;
-		private BigDecimal niX ;
-		private BigDecimal niY;
-		private BigDecimal niCota;
-		private String ciTexto;
-		private String ciImagenes;
-		private String viIdUsuario;
-		private String voError;
+public class SituacionEncontradaDTO {
+    private BigDecimal niSecEEta;
+    private Integer nioLinea;
+    private String viTipo;
+    private String niLineaObliga;
+    private String viTitulo;
+    private BigDecimal niSistemaCoordenadas;
+    private BigDecimal niX ;
+    private BigDecimal niY;
+    private BigDecimal niCota;
+    private String ciTexto;
+    private String ciImagenes;
+    private String viIdUsuario;
+    private String voError;
 
     public BigDecimal getNiSecEEta() {
         return niSecEEta;
@@ -25,11 +25,11 @@ public class SituacionGuardarDTO {
         this.niSecEEta = niSecEEta;
     }
 
-    public String getNioLinea() {
+    public Integer getNioLinea() {
         return nioLinea;
     }
 
-    public void setNioLinea(String nioLinea) {
+    public void setNioLinea(Integer nioLinea) {
         this.nioLinea = nioLinea;
     }
 
