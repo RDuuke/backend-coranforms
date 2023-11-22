@@ -1,24 +1,19 @@
 package co.gov.coran.licencias.service.impl;
 
 import co.gov.coran.licencias.models.dto.InformacionBasicaDTO;
-import co.gov.coran.licencias.models.dto.ListaDatosBasicos;
 import co.gov.coran.licencias.repository.InformacionBasicaRepository;
 import co.gov.coran.licencias.service.InformacionBasicaService;
 import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
 @Service
 public class InformacionBasicaServieImpl implements InformacionBasicaService {
-
     private InformacionBasicaRepository informacionBasicaRepository;
-
     public InformacionBasicaServieImpl(InformacionBasicaRepository informacionBasicaRepository){
         this.informacionBasicaRepository= informacionBasicaRepository;
     }
-
 
     public InformacionBasicaDTO listaDatosBasicos(Double niSecEEta, String viIdUsuario) {
 
@@ -47,12 +42,13 @@ public class InformacionBasicaServieImpl implements InformacionBasicaService {
         dto.setAcompagnantes_visita((String) value[17]);
         dto.setEs_autogestion(String.valueOf(value[18]));
         dto.setAgregar_coordenadas_cs(String.valueOf(value[19]));
+        dto.setTerritorial_correo(String.valueOf(value[21]));
+        dto.setTerritorial_direccion((String) value[22]);
+        dto.setTerritorial_telefono(String.valueOf(value[23]));
+        dto.setTerritorial_municipio(String.valueOf(value[24]));
 
         return dto;
     }).findFirst().get();
         return informacionBasicaDTO;
     }
-
-
-
 }

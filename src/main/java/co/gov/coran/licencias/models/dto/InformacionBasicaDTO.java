@@ -1,11 +1,9 @@
 package co.gov.coran.licencias.models.dto;
 
-
 import java.math.BigDecimal;
 import java.util.Date;
 
 public class InformacionBasicaDTO {
-
     private String nombre_asunto;
     private String codigo_asunto;
     private String exp_sec;
@@ -26,6 +24,10 @@ public class InformacionBasicaDTO {
     private String acompagnantes_visita;
     private String es_autogestion;
     private String agregar_coordenadas_cs;
+    private String territorial_correo;
+    private String territorial_direccion;
+    private String territorial_telefono;
+    private String territorial_municipio;
 
     public String getNombre_asunto() {
         return nombre_asunto;
@@ -131,7 +133,6 @@ public class InformacionBasicaDTO {
         this.doc_fecha = doc_fecha;
     }
 
-
     public String getNumero_visita() {
         return numero_visita;
     }
@@ -146,6 +147,14 @@ public class InformacionBasicaDTO {
 
     public void setFecha_realiza_visita(Date fecha_realiza_visita) {
         this.fecha_realiza_visita = fecha_realiza_visita;
+    }
+
+    public BigDecimal getHoras_duracion_visita() {
+        return horas_duracion_visita;
+    }
+
+    public void setHoras_duracion_visita(BigDecimal horas_duracion_visita) {
+        this.horas_duracion_visita = horas_duracion_visita;
     }
 
     public String getTrasporte_visita() {
@@ -164,14 +173,6 @@ public class InformacionBasicaDTO {
         this.acompagnantes_visita = acompagnantes_visita;
     }
 
-    public BigDecimal getHoras_duracion_visita() {
-        return horas_duracion_visita;
-    }
-
-    public void setHoras_duracion_visita(BigDecimal horas_duracion_visita) {
-        this.horas_duracion_visita = horas_duracion_visita;
-    }
-
     public String getEs_autogestion() {
         return es_autogestion;
     }
@@ -186,5 +187,37 @@ public class InformacionBasicaDTO {
 
     public void setAgregar_coordenadas_cs(String agregar_coordenadas_cs) {
         this.agregar_coordenadas_cs = agregar_coordenadas_cs;
+    }
+
+    public String getTerritorial_correo() {
+        return territorial_correo;
+    }
+
+    public void setTerritorial_correo(String territorial_correo) {
+        this.territorial_correo = territorial_correo;
+    }
+
+    public String getTerritorial_direccion() {
+        return territorial_direccion;
+    }
+
+    public void setTerritorial_direccion(String territorial_direccion) {
+        this.territorial_direccion = territorial_direccion;
+    }
+
+    public String getTerritorial_telefono() {
+        return territorial_telefono;
+    }
+
+    public void setTerritorial_telefono(String territorial_telefono) {
+        this.territorial_telefono = territorial_telefono;
+    }
+
+    public String getTerritorial_municipio() {
+        return territorial_municipio;
+    }
+
+    public void setTerritorial_municipio(String territorial_municipio) {
+        this.territorial_municipio = territorial_municipio;
     }
 }
